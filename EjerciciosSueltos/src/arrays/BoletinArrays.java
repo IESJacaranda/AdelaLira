@@ -5,17 +5,17 @@ import java.util.*;
 public class BoletinArrays {
 	
 	public static final String CORCHETE_APERTURA="[";
-	public static final String CORCHETE_CIERRE="}";
+	public static final String CORCHETE_CIERRE="]";
 	public static final String SEPARADOR=",";
 	public static final String SALTO_DE_LINEA="\n";
 	
 	static Scanner teclado = new Scanner (System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws DimensionNoAdecuadaException {
 		
 		
 		int [][] matriz2 = {{2,3},{5,6}};
-		int [][] matriz3 = {{2,3},{5,6}};
+		int [][] matriz3 = {{2,9},{5,8}};
 		int v1 []= {3,2};
 		int v2 []= {5,15,23};
 		int [][] matrizRotar = {{3,1,0},{0,2,4},{0,5,1}};
@@ -39,11 +39,48 @@ public class BoletinArrays {
 		System.out.println("EJERCICIO 4");
 		System.out.println(ordernarListas(v1, v2));
 		System.out.println("EJERCICIO 4 JOSE MANUEL");
-		System.out.println(concatenacionJM(v1, v2));
+		System.out.println(imprimirVector(concatenacionJM(v1, v2)));
 		System.out.println("EJERCICIO 5");
-		System.out.println(rotarMatrices(matrizRotar));
-
+		System.out.println(imprimirMatriz(rotarMatrices(matrizRotar)));
+		System.out.println(imprimirMatriz(rotarMatrices(rotarMatrices(rotarMatrices(matrizRotar)))));
+		System.out.println("COMPARAR MATRICES");
+		System.out.println(sonMatricesIguales(matriz2,matriz3));
 	}
+	
+	//IMPRIMIR MATRICES
+	public static String imprimirVector(int matriz[]) {	
+		
+		String print2="\n[";
+		
+		for(int i=0;i<matriz.length;i++) {
+				if(i!=matriz.length-1) {
+					print2+=matriz[i] + ", ";
+				}else {
+					print2+= matriz[i]+"]";
+		}
+	}
+		return print2; 
+}
+
+	public static String imprimirMatriz(int matriz[][]) {
+		
+		StringBuilder print2= new StringBuilder();
+
+		for(int i=0;i<matriz.length;i++) {
+			
+			print2.append("\n [");
+			
+			for (int j=0;j<matriz[i].length;j++) {
+				if(j!=matriz[i].length-1) {
+					print2.append(matriz[i][j] + ", ");
+				}else {
+					print2.append(matriz[i][j]+"]");
+				}
+			}
+		}
+		return print2.toString();
+	}
+	
 	
 	
 	//EJERCICIO1
@@ -189,21 +226,45 @@ public class BoletinArrays {
 	}
 	
 	
-	public static int rotarMatrices(int[][] matrizRotar) {
+	public static int[][] rotarMatrices(int[][] matrizRotar) {
 		
-		int aux = 0;
+		int[][] rotada = new int [matrizRotar.length][matrizRotar.length];
 		
-		for (int i=0;i<matrizRotar.length;i++) {
-			for (int j=0;j<matrizRotar[i].length;j++) {
-				aux=matrizRotar[i][j];
-				matrizRotar[i][j]=matrizRotar[j][i];
+		
+		for (int i=0; i<matrizRotar.length;i++) {
+			for (int j=0; j<matrizRotar[i].length;j++) {
+				rotada [j][matrizRotar.length-1-i] = matrizRotar[i][j];
+				
 			}
 		}
-
-		return aux;
+		return rotada;
 	}
 	
-	
-	
-
+	public static boolean sonMatricesIguales (int[][]matriz2, int[][]matriz3) throws DimensionNoAdecuadaException {
+		
+		boolean sonIguales=false;
+		
+		if (matriz2==null && matriz3==null) {
+			throw new DimensionNoAdecuadaException();
+		}
+		else if (matriz2.length==matriz3.length 
+				&& matriz2[0]!=null && matriz3!=null 
+				&& matriz2[0].length==matriz2[0].length){
+			//Compruebo elemento a elemento
+			//Si entra tenemos las mismas dimensiones de filas y columnas
+			
+			for (int i=0;i<matriz2.length;i++) {
+				for (int j=0;j<matriz2[i].length;j++) { //se pone [i] si no son cuadradas
+					if (matriz2[i][j] == matriz3[i][j]) {
+						sonIguales=true;
+					}
+				}
+			}
+		}
+		else {
+				sonIguales=false;
+		}	
+		return sonIguales;
+	}
 }
+	
