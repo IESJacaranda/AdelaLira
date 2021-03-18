@@ -1,6 +1,13 @@
-package ejercicio2;
+package ejercicio2DosVectores;
 
 import java.util.*;
+
+/**
+ * EJERCICIO 2 BOLETIN 8
+ * Mediante dos vectores desplazamos una lista.
+ * @author aalir
+ *
+ */
 
 public class Desplazar {
 	
@@ -12,7 +19,11 @@ public class Desplazar {
 
 	}
 	
-
+	
+/**
+ * Metodo para crear una matriz por consola y después desplazarla
+ * @return
+ */
 	public static String crearMatriz () {
 		int aux=1;
 		int [] lista = new int [10];

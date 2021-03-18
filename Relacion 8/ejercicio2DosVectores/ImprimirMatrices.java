@@ -1,4 +1,4 @@
-package ejercicio2;
+package ejercicio2DosVectores;
 
 public class ImprimirMatrices {
 		

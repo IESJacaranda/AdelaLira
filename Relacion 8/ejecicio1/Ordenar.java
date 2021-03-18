@@ -15,11 +15,11 @@ public class Ordenar {
 	public static void main(String[] args) {
 		int [] lista= {1,2,3,4,5,6,7,8,9,10};
 
-		System.out.println(ImprimirMatrices.printMatrix(ordenarListas(lista)));
+		System.out.println(ImprimirMatrices.printMatrix(invertirListas(lista)));
 	}
 
 
-	public static int[] ordenarListas(int [] lista) {
+	public static int[] invertirListas(int [] lista) {
 		int [] listaInversa = new int [lista.length];
 		int aux = 9;
 		
