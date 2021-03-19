@@ -6,7 +6,7 @@ public class numeros {
 
 	static Scanner teclado = new Scanner (System.in);
 	public static void main(String[] args) {
-		pedirNumeros();
+		System.out.println("La media es " + pedirNumeros());
 
 	}
 	
@@ -14,23 +14,44 @@ public class numeros {
 		
 		int media = 0;
 		int almacen = 0;
-		String respuesta = "S";
+		int respuesta = 1;
+		int contador=0;
 		
-		while(respuesta=="S") {
+		while(respuesta!=2) {
 			System.out.println("Introduce un número");
 			almacen=teclado.nextInt();
 			if (almacen>0 && almacen<1001) {
 				media=media+almacen;
+				contador++;
 			}
 			else {
 				System.out.println("Numero incorrecto");
 			}
 			System.out.println("¿Desea introducir mas numeros? (Responda S si es un si, y N si es un no)");
-			respuesta=teclado.nextLine();
+			respuesta=teclado.nextInt();
 
 		}
 				
-		return media;
+		return media/contador;
+	}
+	
+	public static int [] pedirNumerosLista() {
+		
+		int [] listaNumeros = null;
+		int respuesta=1;
+		int numero = 0;
+		
+		while(respuesta!=2) {
+			System.out.println("Introduce un número");
+			numero=teclado.nextInt();
+		
+			
+
+		}
+		
+		
+		
+		return null;
 	}
 	
 	
