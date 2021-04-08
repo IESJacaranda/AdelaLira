@@ -1,4 +1,4 @@
-package ejercicio5;
+package ejercicio5_b;
 
 import java.util.Iterator;
 
@@ -6,11 +6,10 @@ public class Cartas {
 	
 	public static final String [] PALOS = {"bastos", "oros", "copas", "espadas"};
 
-	private String palo;
+
 	private int numero;
 	
 	public Cartas () {
-		this.palo=palo;
 		this.numero=numero;
 	}
 	
