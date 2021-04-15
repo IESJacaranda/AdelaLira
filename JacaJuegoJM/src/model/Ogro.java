@@ -2,9 +2,9 @@ package model;
 
 public class Ogro extends Jugador {
 
-	public Ogro(){
+	public Ogro (TipoElemento tipo) {
 		super();
-		this.simbolo='O';
+		this.tipoElemento=tipo;
 	}
 	
 }

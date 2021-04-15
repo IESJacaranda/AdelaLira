@@ -1,9 +1,9 @@
 package model;
 
 public class Elfo extends Jugador {
-
-	public Elfo(){
+	
+	public Elfo (TipoElemento tipo) {
 		super();
-		this.simbolo='E';
+		this.tipoElemento=tipo;
 	}
 }

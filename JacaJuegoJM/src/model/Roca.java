@@ -6,7 +6,7 @@ public class Roca extends Elemento {
 
 	public Roca() {
 		super();
-		this.simbolo=Constantes.ROCA;
+		this.tipoElemento=TipoElemento.ROCA;
 	}
 	
 }

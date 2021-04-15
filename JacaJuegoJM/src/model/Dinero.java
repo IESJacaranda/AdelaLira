@@ -6,7 +6,7 @@ public class Dinero extends Elemento {
 
 	public Dinero() {
 		super();
-		this.simbolo=Constantes.DINERO;
+		this.tipoElemento=TipoElemento.DINERO;
 	}	
 	
 }

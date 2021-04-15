@@ -10,7 +10,7 @@ public class Tablero {
 		super();
 		tablero = new Elemento[LONGITUD][LONGITUD];
 		tablero[3][7]= new Roca();
-		tablero [3][5] = new Elfo();
+		tablero [3][5] = new Elfo(TipoElemento.JUGADOR_T);
 	}
 	
 	public void imprimirTablero() {

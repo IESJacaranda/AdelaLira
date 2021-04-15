@@ -2,9 +2,9 @@ package model;
 
 public class Mago extends Jugador {
 
-	public Mago(){
+	public Mago (TipoElemento tipo) {
 		super();
-		this.simbolo='M';
+		this.tipoElemento=tipo;
 	}
 	
 }

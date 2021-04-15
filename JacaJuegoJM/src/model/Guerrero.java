@@ -1,10 +1,10 @@
 package model;
 
 public class Guerrero extends Jugador {
-
-	public Guerrero(){
+	
+	public Guerrero (TipoElemento tipo) {
 		super();
-		this.simbolo='G';
+		this.tipoElemento=tipo;
 	}
 	
 }

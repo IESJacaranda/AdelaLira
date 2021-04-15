@@ -2,11 +2,12 @@ package model;
 
 public abstract class Elemento {
 
-	protected char simbolo;
+	protected TipoElemento tipoElemento;
+	
 
 	@Override
 	public String toString() {
-		return "" + simbolo; //Convierte en String
+		return "" + tipoElemento; //Convierte en String
 	}
 	
 	

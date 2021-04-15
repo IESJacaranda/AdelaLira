@@ -6,7 +6,7 @@ public class Gema extends Elemento {
 
 	public Gema() {
 		super();
-		this.simbolo=Constantes.GEMA;
+		this.tipoElemento=TipoElemento.GEMA;
 	}	
 	
 }
