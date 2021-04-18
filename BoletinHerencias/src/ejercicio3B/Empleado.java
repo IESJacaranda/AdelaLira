@@ -5,7 +5,7 @@ public abstract class Empleado {
 	private String nombre;
 	private int edad;
 	private String NIF;
-	private double sueldo;
+	protected double sueldo;
 	
 	public Empleado(String nombre, int edad, String NIF, double sueldo) {
 		this.nombre=nombre;

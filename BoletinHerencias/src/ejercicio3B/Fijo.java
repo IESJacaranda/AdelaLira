@@ -1,7 +1,7 @@
 package ejercicio3B;
 
-import java.time.Duration;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Fijo extends Empleado {
 
@@ -16,10 +16,12 @@ public class Fijo extends Empleado {
 	@Override
 	public double calculaSueldo() {
 		int añosEnEmpresa = 1;
+		double sueldoFinal=0.0;
 
-		añosEnEmpresa=((int)Duration.between(this.añoAlta, LocalDate.now()));
+		añosEnEmpresa=(int) ChronoUnit.YEARS.between(this.añoAlta, LocalDate.now());
+		sueldoFinal=sueldo+(añosEnEmpresa*20);
 		
-		return 0;
+		return sueldoFinal;
 	}
 	
 	
