@@ -32,7 +32,10 @@ public class Frase {
 		
 		for (int i = 0; i < CONTADOR.length; i++) {
 			if(CONTADOR[i]>0) {
-				System.out.println("La letra " +ABECEDARIO[i] + " aparece un total de " + CONTADOR[i] + " veces.");
+				
+				String cadenaConFormato = "La letra %s aparece un total de %s veces.";
+				System.out.println(String.format(cadenaConFormato, ABECEDARIO[i], CONTADOR[i]));
+				//"La letra " +ABECEDARIO[i] + " aparece un total de " + CONTADOR[i] + " veces."
 			}
 			
 		}
