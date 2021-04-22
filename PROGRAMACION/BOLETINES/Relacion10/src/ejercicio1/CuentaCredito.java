@@ -27,12 +27,13 @@ public class CuentaCredito extends Cuenta {
 	}
 
 	
-	public double hacerReintegroCuentaCredito(double reintegro) throws Exception {
-		if(reintegro>=calcularNumerosRojos() ) {
+	public double hacerReintegroCuentaCredito(double reintegro) throws puedeHacerReintegroException {
+		if(saldo+credito>reintegro) {
 			saldo-=reintegro;
+			System.out.println(saldo);
 		}
 		else {
-			throw new Exception("La operación no se puede realizar");
+			throw new puedeHacerReintegroException();
 		}
 		return saldo; 
 	}
@@ -45,14 +46,19 @@ public class CuentaCredito extends Cuenta {
 	}
 
 
-	public void setCredito(double credito) {
+	public void setCredito(double credito) throws TamañoCreditoException {
 		if(this.credito>0 && this.credito<301) {
 			this.credito = credito;
-			System.out.println("Cogido");
 		}
 		else {
-			System.out.println("Error");
+			throw new TamañoCreditoException();
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "El credito de esta cuenta es " + credito + ", el saldo es " + this.saldo + ".";
+	}
+	
 	
 }
