@@ -1,5 +1,6 @@
 package ejercicio4;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -25,10 +26,21 @@ public class Main {
 					historial.addPagina(new PaginaWeb (pagina, fecha));
 					break;
 				case 2:
-					System.out.println("El historial es: ");
+					System.out.println("El historial completo es: ");
 					historial.consultaHistorialCompleto();
 					break;
 				case 3:
+					System.out.println("Introduce día");
+					int day = Integer.parseInt(teclado.nextLine());
+					System.out.println("Introduce mes");
+					int mes = Integer.parseInt(teclado.nextLine());
+					System.out.println("Introduce año");
+					int year = Integer.parseInt(teclado.nextLine());
+					
+					LocalDate ld1 = LocalDate.of(year, mes, day);
+					
+					System.out.println("El historial del día " + day +"/"+ mes +"/"+ year + " es: ");
+					historial.consultaHistorialDia(ld1);
 					break;
 				case 4:
 					try {
@@ -44,6 +56,7 @@ public class Main {
 					System.out.println("Saliendo del sistema");
 					break;
 				default:
+					System.out.println("Error");
 					break;
 			}
 		}
@@ -68,6 +81,8 @@ public class Main {
 
 	}
 	
+	
+	
 	public static void menu() {
 		System.out.println("1.- Nueva página consultada\n"+
 							"2.-Consultar historial completo\n"+
@@ -77,4 +92,7 @@ public class Main {
 				);
 	}
 
+
+	
+	
 }

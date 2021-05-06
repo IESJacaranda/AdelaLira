@@ -32,14 +32,12 @@ public class Historial {
 	}
 	
 	public void consultaHistorialDia(LocalDate dia) {
-		
-//		StringBuilder sb = new StringBuilder();
-//		
-//		for(PaginaWeb i : listaPaginas) {
-//			if(dia= )
-//			sb.append(i+"\n");
-//		}
-//		System.out.println(sb.toString());
+		StringBuilder sb = new StringBuilder();
+		for (PaginaWeb p : listaPaginas) {
+			if(p.getFechaHistorial().getYear()==dia.getYear() && p.getFechaHistorial().getMonth()==dia.getMonth() && p.getFechaHistorial().getDayOfMonth()==dia.getDayOfMonth());
+				sb.append(p + "\n");
+		}
+			System.out.println(sb.toString());
 	}
 	
 	public void borraHistorial() throws HistorialVacioException{
