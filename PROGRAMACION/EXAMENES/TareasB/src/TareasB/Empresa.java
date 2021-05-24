@@ -65,9 +65,9 @@ public class Empresa {
 		int baja = 0;
 		
 		for(Tarea i: tareasNoRealizadas) {
-			if(i.getPrioridad().equals("ALTA")) {
+			if(i.getPrioridad().equals(TipoPrioridad.ALTA)) {
 				alta++;
-			}else if(i.getPrioridad().equals("MEDIA")) {
+			}else if(i.getPrioridad().equals(TipoPrioridad.MEDIA)) {
 				media++;
 			}else {
 				baja++;
@@ -84,7 +84,7 @@ public class Empresa {
 		
 		while(existe==false && sig.hasNext()) {
 			Tarea e = sig.next();
-			if(e.getDescripcion().equalsIgnoreCase(descripcion) && e.getFechaAlta().isEqual(fechaAlta)) {
+			if(e.getDescripcion().equalsIgnoreCase(descripcion) && e.getFechaAlta().equals(fechaAlta)) {
 				tareasNoRealizadas.remove(e);
 				e.setFechaSolucion(fechaSolucion);
 				tareasRealizadas.add(e);

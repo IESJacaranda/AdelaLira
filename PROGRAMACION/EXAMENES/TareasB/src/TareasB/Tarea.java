@@ -39,7 +39,7 @@ public abstract class Tarea implements Temporizable{
 		return fechaAlta;
 	}
 
-	public String getPrioridad() {
+	public TipoPrioridad getPrioridad() {
 		return prioridad;
 	}
 
@@ -101,8 +101,16 @@ public abstract class Tarea implements Temporizable{
 	//¿NECESITA FECHA DE SOLUCION?
 	@Override
 	public String toString() {
-		return "Tarea [descripcion=" + descripcion + ", fechaAlta=" + fechaAlta + ", fechaSolucion=" + fechaSolucion
-				+ ", prioridad=" + prioridad + ", codigo=" + codigo + "]";
+		String descripcion = " ";
+		if(fechaSolucion==null) {
+			descripcion= "Tarea [descripcion=" + descripcion + ", fechaAlta=" + fechaAlta + ", prioridad=" + prioridad + ", codigo=" + codigo + "]";
+		}
+		else {
+			descripcion = "Tarea [descripcion=" + descripcion + ", fechaAlta=" + fechaAlta + ", fechaSolucion=" + fechaSolucion
+					+ ", prioridad=" + prioridad + ", codigo=" + codigo + "]";
+		}
+		
+		return descripcion;
 	}
 	
 	

@@ -74,7 +74,7 @@ public class Empresa {
 		return sb.toString();
 	}
 
-	public void eliminarGenerador(int codigo) {
+	public void eliminarGenerador(int codigo) throws NoGeneradorException {
 		boolean existe=false;
 		java.util.Iterator<Generadores> sig = listaGeneradores.iterator();
 		
@@ -85,7 +85,7 @@ public class Empresa {
 				existe=true;
 			}
 			else {
-			System.out.println("error");
+			throw new NoGeneradorException();
 		}
 		}
 	}

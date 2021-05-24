@@ -18,6 +18,41 @@ public abstract class Generadores implements Monetizable {
 		this.potencia = potencia;
 		this.codigo=codigoIncrementador++;
 	}
+	
+	
+	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + codigo;
+		return result;
+	}
+
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Generadores other = (Generadores) obj;
+		if (codigo != other.codigo)
+			return false;
+		return true;
+	}
+
+
+
+
+
 	public double getPotencia() {
 		return potencia;
 	}
@@ -40,8 +75,9 @@ public abstract class Generadores implements Monetizable {
 	}
 	@Override
 	public double dinero(double precioEnergia) {
-		// TODO Auto-generated method stub
-		return 0;
+		double precioFinal;
+		precioFinal=potencia*precioEnergia;
+		return precioFinal;
 	}
 	
 	
