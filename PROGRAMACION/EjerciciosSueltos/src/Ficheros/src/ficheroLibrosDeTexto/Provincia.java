@@ -46,9 +46,15 @@ public class Provincia {
 		return true;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Provincia [nombre=" + nombre + "]";
+		StringBuilder sb  = new StringBuilder();
+		sb.append( "Provincia [nombre=" + nombre + "]");
+		for (Localidad a : listaLocalidades) {
+			sb.append(a.toString() +"\n");
+		}
+		return sb.toString();
 	}
 
 	public String getNombre() {

@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		try {
-			ListaProvincias provincias = new ListaProvincias("./contenedorFicheros2/gratuidadlibrosdetextoandalucia.json");
+			ListaProvincias provincias = new ListaProvincias(".\\contenedorFicheros2\\gratuidadlibrosdetextoandalucia.csv");
 			System.out.println(provincias);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

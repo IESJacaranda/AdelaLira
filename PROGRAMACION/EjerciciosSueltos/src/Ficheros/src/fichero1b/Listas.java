@@ -19,6 +19,7 @@ public class Listas {
 			BufferedReader buffer=new BufferedReader(f);
 			
 			String linea = buffer.readLine();
+			linea = buffer.readLine();
 			
 			while (linea!=null) {
 				String aux[]=linea.split(",");
@@ -111,6 +112,10 @@ public class Listas {
 		}
 	}
 	
+	
+	public void listaLocalidades(String fichero) {
+		
+	}
 	
 	
 	

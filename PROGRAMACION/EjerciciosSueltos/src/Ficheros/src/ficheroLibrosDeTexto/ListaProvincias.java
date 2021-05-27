@@ -42,6 +42,7 @@ public class ListaProvincias {
 			BufferedReader buffer = new BufferedReader(f);
 			
 			String linea = buffer.readLine();
+			linea = buffer.readLine();
 			
 			while(linea!=null) {
 				String aux[] = linea.split(",");
@@ -55,7 +56,7 @@ public class ListaProvincias {
 					
 					while(sig.hasNext() && !encontrado) {
 						Provincia provincia = sig.next();
-						if(provincia.getNombre()==nombreProvincia) {
+						if(provincia.getNombre().equals(nombreProvincia)) {
 							provincia.addLocalidad(l);
 							encontrado=true;
 						}
